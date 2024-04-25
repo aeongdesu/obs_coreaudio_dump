@@ -1,0 +1,9 @@
+jobs:
+  ci:
+    runs-on: [Windows-latest]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - run: |
+          wget https://www.apple.com/itunes/download/win64 -OutFile iTunesSetup.exe
+          cmd /c '${{ github.workspace}}\makeportable2.cmd'
