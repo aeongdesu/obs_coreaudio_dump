@@ -5,7 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          Invoke-WebRequest https://www.apple.com/itunes/download/win64 -OutFile ${{ github.workspace }}\iTunesSetup64.exe
+          Invoke-WebRequest https://www.apple.com/itunes/download/win64 -OutFile ${{ github.workspace }}\iTunes64Setup.exe
           cmd /c '${{ github.workspace }}\makeportable2.cmd'
       - uses: actions/upload-artifact@v4
         with:
