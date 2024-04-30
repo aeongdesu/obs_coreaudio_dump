@@ -3,7 +3,7 @@ jobs:
   ci:
     runs-on: [Windows-latest]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: |
           Invoke-WebRequest https://www.apple.com/itunes/download/win64 -OutFile ${{ github.workspace }}\iTunes64Setup.exe
           cmd /c '${{ github.workspace }}\makeportable2.cmd'
@@ -11,3 +11,4 @@ jobs:
         with:
           name: CoreAudioLib64
           path: ${{ github.workspace }}/QTfiles64/*
+
